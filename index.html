@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imperial Diesel | 24/7 Diesel Repair & Mobile Mechanic Services</title>
+    <meta name="description" content="Imperial Diesel provides expert mobile diesel repair, roadside assistance, and AI diagnostics. We come to you. 24/7 Service. Call (555) 123-4567." />
+    <meta name="keywords" content="diesel repair near me, mobile mechanic, roadside assistance, truck repair, engine diagnostics, imperial diesel, 24/7 auto repair, fleet maintenance" />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="Industrial Park" />
+    <meta name="geo.position" content="37.7749;-122.4194" />
+    <meta name="ICBM" content="37.7749, -122.4194" />
+
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Imperial Diesel | Expert Auto & Diesel Repair" />
+    <meta property="og:description" content="Top-tier diesel performance and general auto repair. Expert mechanics and AI diagnostics to keep you on the road." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1200" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://imperialdiesel.com" />
+    
+    <!-- Schema.org JSON-LD for Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Imperial Diesel",
+      "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1200",
+      "@id": "https://imperialdiesel.com",
+      "url": "https://imperialdiesel.com",
+      "telephone": "+15551234567",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "88 Diesel Avenue",
+        "addressLocality": "Industrial Park",
+        "addressRegion": "MC",
+        "postalCode": "98765",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.7749,
+        "longitude": -122.4194
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.facebook.com/imperialdiesel",
+        "https://www.instagram.com/imperialdiesel"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f0f3f5',
+                100: '#dde4e8',
+                200: '#c1cfd6',
+                300: '#9aafbc',
+                400: '#758d9d',
+                500: '#5a7080',
+                600: '#485a67',
+                700: '#3d4b55',
+                800: '#343f47',
+                900: '#2d353b', 
+                950: '#1d2327',
+              },
+              accent: {
+                500: '#eab308', 
+                600: '#ca8a04',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      /* Custom Animations */
+      @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.5s ease-out forwards;
+      }
+    </style>
+
+    <!-- Google GenAI Import Map -->
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-slate-900 shadow-lg text-white">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex justify-between items-center h-24">
+          <!-- Logo -->
+          <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <div class="relative">
+              <div class="bg-accent-500 p-2.5 rounded transform rotate-45 group-hover:rotate-0 transition-transform duration-300 shadow-lg shadow-accent-500/20">
+                <i data-lucide="wrench" class="text-slate-900 transform -rotate-45 group-hover:rotate-0 transition-transform duration-300 w-6 h-6 stroke-[2.5]"></i>
+              </div>
+              <div class="absolute -bottom-1 -right-1 bg-white text-slate-900 rounded-full p-0.5 border-2 border-slate-900">
+                <i data-lucide="shield" class="w-3 h-3 stroke-[3]"></i>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-2xl font-extrabold tracking-tighter uppercase leading-none">
+                Imperial
+              </span>
+              <span class="text-accent-500 font-bold tracking-widest text-sm uppercase leading-none">
+                Diesel.com
+              </span>
+            </div>
+          </div>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex space-x-8">
+            <a href="#" class="text-slate-300 hover:text-accent-400 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
+            <a href="#services" class="text-slate-300 hover:text-accent-400 font-medium transition-colors text-sm uppercase tracking-wide">Services</a>
+            <a href="#diagnostic" class="text-slate-300 hover:text-accent-400 font-medium transition-colors text-sm uppercase tracking-wide">AI Diagnostic</a>
+            <a href="#contact" class="text-slate-300 hover:text-accent-400 font-medium transition-colors text-sm uppercase tracking-wide">Contact</a>
+          </nav>
+
+          <!-- Desktop CTA -->
+          <div class="hidden md:flex items-center">
+            <a href="tel:+15551234567" class="flex items-center space-x-2 bg-accent-600 hover:bg-accent-500 text-white px-6 py-3 rounded-sm font-bold uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
+              <i data-lucide="phone" class="w-[18px] h-[18px]"></i>
+              <span>24/7 Support</span>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-7 h-7"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700 absolute w-full shadow-xl">
+        <nav class="flex flex-col py-4">
+          <a href="#" class="mobile-link px-6 py-3 text-slate-300 hover:bg-slate-700 hover:text-accent-400 font-medium border-l-4 border-transparent hover:border-accent-500">Home</a>
+          <a href="#services" class="mobile-link px-6 py-3 text-slate-300 hover:bg-slate-700 hover:text-accent-400 font-medium border-l-4 border-transparent hover:border-accent-500">Services</a>
+          <a href="#diagnostic" class="mobile-link px-6 py-3 text-slate-300 hover:bg-slate-700 hover:text-accent-400 font-medium border-l-4 border-transparent hover:border-accent-500">AI Diagnostic</a>
+          <a href="#contact" class="mobile-link px-6 py-3 text-slate-300 hover:bg-slate-700 hover:text-accent-400 font-medium border-l-4 border-transparent hover:border-accent-500">Contact</a>
+          <div class="px-6 pt-6 pb-2">
+             <a href="tel:+15551234567" class="flex items-center justify-center space-x-2 w-full bg-accent-600 text-white px-5 py-4 rounded font-bold uppercase tracking-wider">
+              <i data-lucide="phone" class="w-[18px] h-[18px]"></i>
+              <span>Call Now</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="relative bg-slate-900 overflow-hidden min-h-[650px] flex items-center">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img
+                src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1974"
+                alt="Imperial Diesel Mechanic working on engine"
+                width="1974"
+                height="1316"
+                class="w-full h-full object-cover opacity-30"
+                fetchPriority="high"
+                />
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent"></div>
+            </div>
+
+            <div class="container mx-auto px-4 md:px-6 relative z-10 py-12">
+                <div class="max-w-3xl text-white">
+                    <div class="flex items-center space-x-2 text-accent-500 font-bold tracking-wider uppercase mb-6 bg-slate-800/80 w-fit px-4 py-2 rounded border border-slate-700 backdrop-blur-sm">
+                        <i data-lucide="gauge" class="w-[18px] h-[18px] animate-pulse"></i>
+                        <span class="text-xs md:text-sm">Diesel Specialists & Auto Repair</span>
+                    </div>
+                
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+                        IMPERIAL <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-yellow-200">
+                        DIESEL
+                        </span> PERFORMANCE
+                    </h1>
+                
+                    <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl border-l-4 border-accent-600 pl-6">
+                        Elite diagnostics, diesel engine repair, and 24/7 roadside assistance. 
+                        We provide royalty-class service for your truck, fleet, or personal vehicle.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#diagnostic" class="inline-flex justify-center items-center px-8 py-4 bg-accent-600 hover:bg-accent-500 text-white rounded-sm font-bold uppercase tracking-wide transition-all shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:shadow-[0_0_30px_rgba(234,179,8,0.5)]">
+                            <span>AI Engine Check</span>
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex justify-center items-center px-8 py-4 bg-transparent border-2 border-white/20 text-white hover:bg-white hover:text-slate-900 rounded-sm font-bold uppercase tracking-wide transition-all">
+                            Book Appointment
+                        </a>
+                    </div>
+
+                    <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 text-slate-400 border-t border-slate-800 pt-8">
+                        <div class="flex items-center gap-4 group">
+                            <div class="p-3 bg-slate-800 group-hover:bg-accent-600 transition-colors rounded">
+                                <i data-lucide="clock" class="text-white w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-lg">Rapid Response</p>
+                                <p class="text-xs uppercase tracking-wider">On-site Assistance</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="p-3 bg-slate-800 group-hover:bg-accent-600 transition-colors rounded">
+                                <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-lg">Master Techs</p>
+                                <p class="text-xs uppercase tracking-wider">Certified Experts</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="p-3 bg-slate-800 group-hover:bg-accent-600 transition-colors rounded">
+                                <i data-lucide="map-pin" class="text-white w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-lg">Wide Area</p>
+                                <p class="text-xs uppercase tracking-wider">Serving All Regions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-24 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        Comprehensive Auto Care Services
+                    </h2>
+                    <p class="text-lg text-slate-600">
+                        From emergency breakdown assistance to routine maintenance, we handle it all with speed, precision, and transparency.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-brand-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-slate-900/20">
+                            <i data-lucide="truck" class="w-8 h-8 text-accent-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-600 transition-colors">
+                            24/7 Roadside Assistance
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Stuck on the highway? We provide towing, fuel delivery, and lockout services day or night.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-brand-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-slate-900/20">
+                            <i data-lucide="wrench" class="w-8 h-8 text-accent-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-600 transition-colors">
+                            Engine Repair & Diagnostics
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Check engine light on? Our advanced scanners and expert mechanics identify issues accurately.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-brand-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-slate-900/20">
+                            <i data-lucide="battery" class="w-8 h-8 text-accent-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-600 transition-colors">
+                            Battery Replacement
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            We test your charging system and install premium batteries on-site to get you moving again.
+                        </p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-brand-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-slate-900/20">
+                            <i data-lucide="thermometer" class="w-8 h-8 text-accent-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-600 transition-colors">
+                            A/C & Heating Service
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Stay comfortable year-round with our comprehensive climate control maintenance and repair.
+                        </p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-brand-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-slate-900/20">
+                            <i data-lucide="disc" class="w-8 h-8 text-accent-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-600 transition-colors">
+                            Brake Service
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Squeaking or grinding? We perform pad replacements, rotor resurfacing, and fluid flushes.
+                        </p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-brand-100 hover:shadow-xl transition-all duration-300">
+                        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-slate-900/20">
+                            <i data-lucide="key" class="w-8 h-8 text-accent-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-600 transition-colors">
+                            Auto Lockout Service
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Locked your keys inside? Our non-destructive entry techniques will get you back in quickly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIAGNOSTIC CHAT SECTION -->
+        <section id="diagnostic" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                    <!-- Text Content -->
+                    <div class="lg:w-1/2">
+                        <div class="inline-block p-2 bg-white rounded shadow-sm border border-slate-200 mb-4">
+                            <span class="flex items-center gap-2 text-slate-800 font-bold text-sm uppercase tracking-wider">
+                                <i data-lucide="gauge" class="w-[18px] h-[18px] text-accent-600"></i> AI Diagnostic Tool
+                            </span>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
+                            TROUBLE WITH YOUR <br/>
+                            <span class="text-accent-600">ENGINE?</span>
+                        </h2>
+                        <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                            Imperial Diesel leverages advanced Gemini technology to analyze your symptoms instantly. 
+                            From diesel particulate filter warnings to strange knocking sounds, get a preliminary check before you visit the shop.
+                        </p>
+                        
+                        <div class="bg-white p-6 rounded border-l-4 border-red-500 shadow-lg">
+                            <div class="flex items-start gap-4">
+                                <i data-lucide="alert-triangle" class="text-red-500 shrink-0 mt-1"></i>
+                                <div>
+                                <h4 class="font-bold text-slate-900 uppercase tracking-wide">Emergency Warning</h4>
+                                <p class="text-slate-600 text-sm mt-1">
+                                    If you see smoke, fire, or experience brake failure, stop immediately and call the Imperial Diesel emergency line: <a href="tel:5551234567" class="text-accent-600 font-bold hover:underline">(555) 123-4567</a>.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Interface -->
+                    <div class="lg:w-1/2 w-full">
+                        <div class="bg-white rounded-lg shadow-2xl overflow-hidden border border-slate-200 flex flex-col h-[600px]">
+                            
+                            <!-- Chat Header -->
+                            <div class="bg-slate-900 p-5 flex items-center gap-4 border-b-4 border-accent-500">
+                                <div class="bg-white/10 p-2 rounded">
+                                    <i data-lucide="bot" class="text-accent-500 w-6 h-6"></i>
+                                </div>
+                                <div>
+                                <h3 class="text-white font-bold text-lg">Imperial Assistant</h3>
+                                <p class="text-slate-400 text-xs flex items-center gap-1 uppercase tracking-wider">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full block animate-pulse"></span> System Online
+                                </p>
+                                </div>
+                            </div>
+
+                            <!-- Chat Messages -->
+                            <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-6 bg-slate-50">
+                                <!-- Default Welcome Message -->
+                                <div class="flex justify-start">
+                                    <div class="bg-white text-slate-800 border border-slate-200 rounded-bl-none max-w-[85%] rounded p-5 text-sm md:text-base shadow-sm">
+                                        Welcome to Imperial Diesel Diagnostics. I'm your AI mechanic assistant. Tell me about the issues you're experiencing with your vehicle (e.g., 'black smoke', 'loss of power', 'grinding brakes').
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Loading Indicator (Hidden by default) -->
+                            <div id="chat-loading" class="hidden px-6 pb-4">
+                                <div class="flex justify-start">
+                                    <div class="bg-white border border-slate-200 rounded rounded-bl-none p-5 shadow-sm flex items-center gap-3">
+                                        <i data-lucide="loader-2" class="w-5 h-5 text-accent-600 animate-spin"></i>
+                                        <span class="text-slate-500 font-medium">Running diagnostics...</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Input Area -->
+                            <form id="chat-form" class="p-4 bg-white border-t border-slate-200">
+                                <div class="relative">
+                                <input
+                                    id="chat-input"
+                                    type="text"
+                                    placeholder="Describe the problem..."
+                                    class="w-full pl-5 pr-14 py-4 bg-slate-100 border-transparent focus:bg-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 rounded transition-all outline-none text-slate-800 placeholder:text-slate-400 font-medium"
+                                />
+                                <button
+                                    type="submit"
+                                    id="chat-submit"
+                                    class="absolute right-2 top-2 bottom-2 aspect-square bg-slate-900 text-white rounded hover:bg-accent-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                                >
+                                    <i data-lucide="send" class="w-5 h-5"></i>
+                                </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="py-20 bg-white border-t border-slate-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl font-bold mb-10 text-slate-800">Trusted by Local Drivers</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <div class="flex items-center justify-center mb-4 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="italic text-slate-600 mb-4">
+                            "Saved my day when I had a flat on I-95."
+                        </p>
+                        <p class="font-bold text-slate-900">- Happy Customer 1</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <div class="flex items-center justify-center mb-4 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="italic text-slate-600 mb-4">
+                            "The AI diagnostic was surprisingly accurate!"
+                        </p>
+                        <p class="font-bold text-slate-900">- Happy Customer 2</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <div class="flex items-center justify-center mb-4 text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <p class="italic text-slate-600 mb-4">
+                            "Best mechanic shop in town, hands down."
+                        </p>
+                        <p class="font-bold text-slate-900">- Happy Customer 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-24 bg-slate-900 text-white relative">
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Contact Info -->
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 uppercase tracking-tight">
+                            Ready for <span class="text-accent-500">Service?</span>
+                        </h2>
+                        <p className="text-slate-400 text-lg mb-10 max-w-md">
+                            Whether it's a diesel fleet or your personal car, Imperial Diesel keeps you moving. Reach out for immediate assistance.
+                        </p>
+
+                        <div class="space-y-8 mt-10">
+                            <div class="flex items-start gap-5 group">
+                                <div class="bg-slate-800 p-4 rounded group-hover:bg-accent-600 transition-colors text-white">
+                                    <i data-lucide="phone" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg uppercase tracking-wider text-slate-300 mb-1">24/7 Hotline</h4>
+                                    <a href="tel:5551234567" class="text-3xl font-extrabold text-white hover:text-accent-500 transition-colors">
+                                        (555) 123-4567
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-5 group">
+                                <div class="bg-slate-800 p-4 rounded group-hover:bg-accent-600 transition-colors text-white">
+                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg uppercase tracking-wider text-slate-300 mb-1">Workshop</h4>
+                                    <p class="text-xl font-medium text-white">
+                                        88 Diesel Avenue<br />
+                                        Industrial Park, MC 98765
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-5 group">
+                                <div class="bg-slate-800 p-4 rounded group-hover:bg-accent-600 transition-colors text-white">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg uppercase tracking-wider text-slate-300 mb-1">Email</h4>
+                                    <a href="mailto:service@imperialdiesel.com" class="text-xl font-medium text-white hover:text-accent-500 transition-colors">
+                                        service@imperialdiesel.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="bg-white text-slate-900 rounded-sm p-8 shadow-2xl border-t-8 border-accent-500">
+                        <div id="contact-success" class="hidden h-full flex flex-col items-center justify-center text-center py-12">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="check-circle" class="w-10 h-10 text-green-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2">Message Received</h3>
+                            <p class="text-slate-600">
+                                Imperial Diesel dispatch has received your request. We will contact you shortly.
+                            </p>
+                            <button onclick="resetContactForm()" class="mt-8 text-accent-600 font-bold hover:underline uppercase tracking-wide">
+                                Send another request
+                            </button>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6">
+                            <h3 class="text-2xl font-bold mb-6 text-slate-900 uppercase">Request Appointment</h3>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="col-span-2 md:col-span-1">
+                                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Name</label>
+                                    <input type="text" required class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded focus:bg-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none transition-all" placeholder="Your Name" />
+                                </div>
+                                <div class="col-span-2 md:col-span-1">
+                                    <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Phone</label>
+                                    <input type="tel" required class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded focus:bg-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none transition-all" placeholder="(555) 123-4567" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Service Type</label>
+                                <select class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded focus:bg-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none transition-all">
+                                    <option>Diesel Engine Repair</option>
+                                    <option>General Auto Repair</option>
+                                    <option>Roadside Assistance</option>
+                                    <option>Preventative Maintenance</option>
+                                    <option>Fleet Service</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Vehicle Info</label>
+                                <input type="text" class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded focus:bg-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none transition-all" placeholder="Year, Make, Model" />
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Issue Details</label>
+                                <textarea rows="4" class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded focus:bg-white focus:border-accent-500 focus:ring-1 focus:ring-accent-500 outline-none transition-all" placeholder="Please describe what is happening..."></textarea>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                id="contact-submit-btn"
+                                class="w-full bg-slate-900 hover:bg-accent-600 text-white font-bold py-4 rounded shadow-lg transition-all flex items-center justify-center uppercase tracking-wider text-sm"
+                            >
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-900">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <span class="text-2xl font-extrabold text-white tracking-tighter uppercase">
+                        Imperial<span class="text-accent-600">Diesel</span>
+                    </span>
+                    <p class="text-sm mt-2 font-medium">© 2024 Imperial Diesel. All rights reserved.</p>
+                </div>
+                
+                <div class="flex space-x-8 text-sm font-semibold tracking-wide uppercase">
+                    <a href="#" class="hover:text-accent-500 transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-accent-500 transition-colors">Terms</a>
+                    <a href="#" class="hover:text-accent-500 transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIC SCRIPTS -->
+    <script type="module">
+        import { GoogleGenAI } from "@google/genai";
+
+        // *** IMPORTANT: REPLACE WITH YOUR KEY ***
+        // To get a key: https://aistudio.google.com/app/apikey
+        const API_KEY = "YOUR_API_KEY_HERE"; 
+        
+        // --- CHAT LOGIC ---
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatLoading = document.getElementById('chat-loading');
+        let chatHistory = ["Assistant: Welcome to Imperial Diesel Diagnostics..."];
+
+        const SYSTEM_INSTRUCTION = `
+            You are an expert automotive and diesel mechanic assistant for "Imperial Diesel".
+            Your goal is to help users diagnose potential car and truck issues based on the symptoms they describe.
+            1. Be concise, professional, and reassuring. Adopt a knowledgeable, expert tone suitable for "Imperial Diesel".
+            2. Ask clarifying questions if the description is vague.
+            3. Offer a potential diagnosis but ALWAYS add a disclaimer that this is an AI estimate and they should see a professional.
+            4. Encourage them to book an appointment with Imperial Diesel or call our emergency line if it sounds dangerous (brakes, engine overheating, etc.).
+            5. Keep responses under 100 words unless detailed explanation is requested.
+        `;
+
+        function addMessage(text, role, isError = false) {
+            const div = document.createElement('div');
+            div.className = role === 'user' ? 'flex justify-end' : 'flex justify-start';
+            div.innerHTML = `
+                <div class="${role === 'user' ? 'bg-slate-800 text-white rounded-br-none' : 'bg-white text-slate-800 border border-slate-200 rounded-bl-none'} ${isError ? 'bg-red-50 border-red-200 text-red-800' : ''} max-w-[85%] rounded p-5 text-sm md:text-base shadow-sm">
+                    ${text}
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            // Scroll to bottom
+            div.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function handleChatSubmit(e) {
+            e.preventDefault();
+            const text = chatInput.value.trim();
+            if (!text || API_KEY === "YOUR_API_KEY_HERE") {
+                if(API_KEY === "YOUR_API_KEY_HERE") alert("Please set your API Key in the index.html file.");
+                return;
+            }
+
+            // Add user message
+            addMessage(text, 'user');
+            chatInput.value = '';
+            chatHistory.push(`User: ${text}`);
+
+            // Show loading
+            chatLoading.classList.remove('hidden');
+            chatLoading.scrollIntoView({ behavior: 'smooth' });
+
+            try {
+                const ai = new GoogleGenAI({ apiKey: API_KEY });
+                const response = await ai.models.generateContent({
+                    model: 'gemini-2.5-flash',
+                    contents: [
+                        { role: 'user', parts: [{ text: `History: ${chatHistory.join('\n')}\n\nCurrent User Query: ${text}` }] }
+                    ],
+                    config: {
+                        systemInstruction: SYSTEM_INSTRUCTION,
+                        temperature: 0.7,
+                    }
+                });
+
+                const reply = response.text || "I couldn't process that.";
+                chatLoading.classList.add('hidden');
+                addMessage(reply, 'model');
+                chatHistory.push(`Assistant: ${reply}`);
+            } catch (error) {
+                console.error(error);
+                chatLoading.classList.add('hidden');
+                addMessage("Connection error. Please try again or call support.", 'model', true);
+            }
+        }
+
+        chatForm.addEventListener('submit', handleChatSubmit);
+
+        // --- ICONS INITIALIZATION ---
+        // We use a timeout to ensure the script is loaded
+        if (window.lucide) {
+            window.lucide.createIcons();
+        } else {
+            window.addEventListener('load', () => window.lucide.createIcons());
+        }
+
+    </script>
+
+    <script>
+        // --- MOBILE MENU LOGIC ---
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- CONTACT FORM LOGIC ---
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccess = document.getElementById('contact-success');
+        const submitBtn = document.getElementById('contact-submit-btn');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate loading
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                contactForm.classList.add('hidden');
+                contactSuccess.classList.remove('hidden');
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+
+        window.resetContactForm = function() {
+            contactSuccess.classList.add('hidden');
+            contactForm.classList.remove('hidden');
+            contactForm.reset();
+        }
+
+        // --- ANTI-INSPECT LOGIC ---
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12' || 
+               (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) || 
+               (e.ctrlKey && e.key === 'u')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
